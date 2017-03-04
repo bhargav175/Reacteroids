@@ -12,7 +12,7 @@ export default class Bullet {
       x:posDelta.x / 2,
       y:posDelta.y / 2
     };
-    this.radius = 2;
+    this.radius = 20;
   }
 
   destroy(){
@@ -37,10 +37,10 @@ export default class Bullet {
     context.save();
     context.translate(this.position.x, this.position.y);
     context.rotate(this.rotation * Math.PI / 180);
-    context.fillStyle = '#FFF';
+    context.fillStyle = '#4FC3F7';
     context.lineWidth = 0,5;
     context.beginPath();
-    context.arc(0, 0, 2, 0, 2 * Math.PI);
+    context.arc(0, 0, this.radius, 0, 2 * Math.PI);
     context.closePath();
     context.fill();
     context.restore();
